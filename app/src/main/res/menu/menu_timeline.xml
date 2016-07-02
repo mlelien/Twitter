@@ -8,8 +8,21 @@
         android:id="@+id/miProfile"
         android:title="Profile"
         android:icon="@drawable/ic_action_name"
-        android:onClick="onProfileView"
         app:showAsAction="ifRoom"
-        ></item>
+        />
+    <item
+        android:id="@+id/miCompose"
+        android:title="Compose"
+        android:icon="@drawable/ic_compose_tweet"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/miSearch"
+        android:orderInCategory="5"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        />
 
 </menu>

@@ -1,6 +1,7 @@
 package com.codepath.apps.mysimpletweets;
 
 import android.content.Context;
+import android.support.v7.widget.Toolbar;
 
 /*
  * This is the Android application itself and is used to configure various settings
@@ -17,7 +18,6 @@ public class TwitterApplication extends com.activeandroid.app.Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		TwitterApplication.context = this;
 	}
 
 	public static TwitterClient getRestClient() {

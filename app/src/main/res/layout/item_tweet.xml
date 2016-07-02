@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="2dp">
 
     <ImageView
         android:layout_width="50dp"
@@ -10,25 +11,100 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#79d0d8"
-        android:padding="10dp"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="1dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Billy"
-        android:id="@+id/tvUserName"
+        android:id="@+id/tvNameTweetItem"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivProfileImage"
-        android:layout_toEndOf="@+id/ivProfileImage" />
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"/>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Body"
         android:id="@+id/tvBody"
-        android:layout_alignBottom="@+id/ivProfileImage"
+        android:textColor="#000"
+        android:layout_below="@+id/tvNameTweetItem"
         android:layout_toRightOf="@+id/ivProfileImage"
-        android:layout_toEndOf="@+id/ivProfileImage" />
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:fontFamily="sans-serif-thin"/>
+
+    <TextView
+        android:id="@+id/tvUserNameTweetItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" \@red87445"
+        android:layout_alignTop="@id/tvNameTweetItem"
+        android:paddingTop="2dp"
+        android:textColor="#7c7c7c"
+        android:layout_toRightOf="@+id/tvNameTweetItem"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-thin" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8m"
+        android:id="@+id/tvTimeStamp"
+        android:layout_alignParentRight="true"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivReplyIcon"
+        android:src="@drawable/reply_icon"
+        android:layout_below="@+id/tvBody"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:paddingRight="50dp"
+        android:onClick="replyClicked"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivRetweetIcon"
+        android:src="@drawable/retweet_icon"
+        android:layout_toRightOf="@+id/ivReplyIcon"
+        android:layout_below="@id/tvBody"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/tvRetweetCount"
+        android:layout_alignBottom="@+id/favoriteIcon"
+        android:layout_toRightOf="@id/ivRetweetIcon"
+        android:paddingRight="50dp"
+        android:paddingBottom="6dp"
+        android:tag="1"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/favoriteIcon"
+        android:src="@drawable/unfavorite_icon"
+        android:layout_toRightOf="@+id/tvRetweetCount"
+        android:layout_below="@id/tvBody"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="47"
+        android:id="@+id/tvFavoritedCount"
+        android:layout_alignBottom="@+id/favoriteIcon"
+        android:layout_toRightOf="@+id/favoriteIcon"
+        android:layout_toEndOf="@+id/favoriteIcon"
+        android:paddingBottom="6dp"
+        android:tag="1"/>
 </RelativeLayout>

@@ -2,18 +2,23 @@ package com.codepath.apps.mysimpletweets.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 /**
  * Created by emilyl on 6/27/16.
  */
+
+@Parcel
 public class User {
-    private String name;
-    private long uid;
-    private String screenName;
-    private String profileImageUrl;
-    private String tagline;
-    private int followers;
-    private int following;
+     String name;
+     long uid;
+     String screenName;
+     String profileImageUrl;
+     String tagline;
+     int followers;
+     int following;
+
+    public User() { super(); }
 
     public static User fromJSON(JSONObject jsonObject) {
         User user = new User();

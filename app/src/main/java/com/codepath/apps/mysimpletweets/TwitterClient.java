@@ -26,8 +26,8 @@ import com.loopj.android.http.RequestParams;
 public class TwitterClient extends OAuthBaseClient {
 	public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class; // Change this
 	public static final String REST_URL = "https://api.twitter.com/1.1"; // Change this, base API URL
-	public static final String REST_CONSUMER_KEY = "rFGUbvCCikUMnTRoHdADD55tW";       // Change this
-	public static final String REST_CONSUMER_SECRET = "0SzoQ4ThhKgr37U8LqgsAAKaSQFN3UdMlwFIPhFofoe5j3r85U"; // Change this
+	public static final String REST_CONSUMER_KEY = "SIoleg3A7o7umN9P2xytD8sd7";       // Change this
+	public static final String REST_CONSUMER_SECRET = "JT4yxxAdQ4sAxoAToy5NGj0AUt9goWlQNQ1VmEV4GjyY2lYzTc"; // Change this
 	public static final String REST_CALLBACK_URL = "oauth://cpsimpletweets"; // Change this (here and in manifest)
 
 	public TwitterClient(Context context) {
@@ -76,8 +76,49 @@ public class TwitterClient extends OAuthBaseClient {
 	}
 
     public void getUserInfo(AsyncHttpResponseHandler handler) {
-        String apiURL = getApiUrl("account/verify_credentials");
-        RequestParams params = new RequestParams();
+        String apiURL = getApiUrl("account/verify_credentials.json");
         getClient().get(apiURL, null, handler);
+    }
+
+	public void postTweet(String toTweet, AsyncHttpResponseHandler handler) {
+        String apiURL = getApiUrl("statuses/update.json");
+        RequestParams params = new RequestParams();
+        params.put("status", toTweet);
+        getClient().post(apiURL, params, handler);
+    }
+
+	public void getSearchResults(String query, AsyncHttpResponseHandler handler) {
+		String apiURL = getApiUrl("search/tweets.json");
+		RequestParams params = new RequestParams();
+		params.put("q", query);
+		getClient().get(apiURL, params, handler);
+	}
+
+	public void postFavorite(long tweetID, AsyncHttpResponseHandler handler) {
+        String apiURL = getApiUrl("favorites/create.json");
+        RequestParams params = new RequestParams();
+        params.put("id", tweetID);
+        getClient().post(apiURL, params, handler);
+    }
+
+    public void postUnfavorite(long tweetID, AsyncHttpResponseHandler handler) {
+        String apiURL = getApiUrl("favorites/destroy.json");
+        RequestParams params = new RequestParams();
+        params.put("id", tweetID);
+        getClient().post(apiURL, params, handler);
+    }
+
+	public void postRetweet(long tweetID, AsyncHttpResponseHandler handler) {
+		String apiURL = getApiUrl("statuses/retweet/" + Long.toString(tweetID) + ".json");
+		RequestParams params = new RequestParams();
+		params.put("id", tweetID);
+		getClient().post(apiURL, params, handler);
+	}
+
+    public void postUnretweet(long tweetID, AsyncHttpResponseHandler handler) {
+        String apiURL = getApiUrl("statuses/unretweet/" + Long.toString(tweetID) + ".json");
+        RequestParams params = new RequestParams();
+        params.put("id", tweetID);
+        getClient().post(apiURL, params, handler);
     }
 }

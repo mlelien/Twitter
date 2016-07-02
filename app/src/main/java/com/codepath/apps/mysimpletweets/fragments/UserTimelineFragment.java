@@ -18,9 +18,6 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
-/**
- * Created by emilyl on 6/27/16.
- */
 public class UserTimelineFragment extends TweetsListFragment {
     private TwitterClient client;
 

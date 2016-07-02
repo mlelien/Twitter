@@ -38,11 +38,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tagline"
-            android:id="@+id/tvTagline"
+            android:text="\@user"
+            android:id="@+id/tvProfileUsername"
             android:layout_below="@+id/tvName"
             android:layout_alignLeft="@+id/tvName"
-            android:textSize="12sp"/>
+            android:textSize="8sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tagline"
+            android:id="@+id/tvTagline"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ivProfileImage"
+            android:layout_below="@id/tvProfileUsername"
+             />
     </RelativeLayout>
     
     <LinearLayout
