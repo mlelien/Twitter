@@ -31,7 +31,6 @@ The following **optional** features are implemented:
   * [X] The user that wrote the original tweet is automatically "@" replied in compose
 * [X] User can click on a tweet to be **taken to a "detail view"** of that tweet
 * [X] Used Parcelable instead of Serializable leveraging the popular [Parceler library](http://guides.codepath.com/android/Using-Parceler) when passing data between activities.
-* [ ] Apply the popular Butterknife annotation library to reduce view boilerplate.
 
 ## Video Walkthrough
 
